@@ -13,6 +13,8 @@ class _FlashcardPageState extends State<FlashcardPage> {
   @override
   Widget build(BuildContext context) {
     return Column(
+      mainAxisAlignment: MainAxisAlignment.start,
+      crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         SegmentedButton<int>(
           segments: const [
