@@ -1,10 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:auth_project/widget_tree.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:auth_project/reset_and_seed.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
+
   await Firebase.initializeApp();
+
+  await resetAndSeed();
+
   runApp(const MainApp());
 }
 
@@ -25,7 +30,7 @@ class MainApp extends StatelessWidget {
         colorSchemeSeed: Colors.red,
         brightness: Brightness.dark,
       ),
-      themeMode: ThemeMode.dark, // .light / .dark / .system
+      themeMode: ThemeMode.dark,
       home: const WidgetTree(),
     );
   }

@@ -5,8 +5,6 @@ import 'package:firebase_auth/firebase_auth.dart';
 class ProfilePage extends StatelessWidget {
   ProfilePage({super.key});
 
-  int _selectedIndex = 0;
-
   final User? user = Auth().currentUser;
 
   Future<void> signOut() async {
@@ -14,7 +12,7 @@ class ProfilePage extends StatelessWidget {
   }
 
   Widget _title() {
-    return const Text('Firebase auth');
+    return const Text('Profile');
   }
 
   Widget _userUid() {
@@ -28,7 +26,7 @@ class ProfilePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: _title()),
+      appBar: AppBar(title: _title(), actions: [_signOutButton()]),
       body: Container(
         height: double.infinity,
         width: double.infinity,
@@ -36,7 +34,7 @@ class ProfilePage extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[_userUid(), _signOutButton()],
+          children: <Widget>[_userUid()],
         ),
       ),
     );

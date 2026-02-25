@@ -12,13 +12,28 @@ dependencies:
   firebase_core: ^4.4.0
   firebase_auth: ^6.1.4
   cloud_firestore: ^6.1.2
+  flutter_native_splash: ^2.4.0
+  flutter_tts: ^4.0.0
   
+flutter_native_splash:
+  color: "#1a1a2e"  # ta couleur de fond sombre
+  image: assets/icon.png  # optionnel
 
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints: ^6.0.0
+  flutter_launcher_icons: ^0.13.1
 
 flutter:
   uses-material-design: true
+
+
+flutter_launcher_icons:
+  android: "launcher_icon"
+  ios: true
+  image_path: "assets/app_icon.png"
+  min_sdk_android: 21 # Doit correspondre à ton minSdk dans build.gradle
+  adaptive_icon_background: "#FFFFFF" # Couleur de fond pour Android
+  adaptive_icon_foreground: "assets/app_icon.png"
